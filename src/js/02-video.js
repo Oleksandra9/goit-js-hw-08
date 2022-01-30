@@ -9,10 +9,11 @@ const player = new Player(iframe);
 
 function getTime(event) {
   localStorage.videoplayerCurrentTime = event.seconds;
-  console.log(event);
 }
 
-player.on('timeupdate', throttle(getTime, 1000));
+const upDateEverySecond = throttle(getTime, 1000);
+
+player.on('timeupdate', upDateEverySecond);
 
 player.setCurrentTime(localStorage.videoplayerCurrentTime);
 
