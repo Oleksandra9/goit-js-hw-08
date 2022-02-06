@@ -25,7 +25,7 @@ function onFormInput () {
         message: refs.messageEl.value,
     }
     localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
-    return formData;
+    
 }
 
 function onFormSubmit (event) {
